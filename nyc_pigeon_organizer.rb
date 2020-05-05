@@ -2,7 +2,7 @@
 def nyc_pigeon_organizer(data)
 new_hash = {}
 
-pigeon_data.each_pair do |key, key_hash|
+data.each_pair do |key, key_hash|
   key_hash.each_pair do |color_name, names_array|
     names_array.each do |pigeon_name|
       new_hash[pigeon_name] = {}
@@ -10,7 +10,7 @@ pigeon_data.each_pair do |key, key_hash|
   end
 end
 
-pigeon_data.each_pair do |key1, key_hash|
+data.each_pair do |key1, key_hash|
   key_hash.each_pair do |key2, val|
     val.each do |name|
       new_hash[name][key1] = []
@@ -19,7 +19,7 @@ pigeon_data.each_pair do |key1, key_hash|
   end
 end
 
-pigeon_data[:color].each do |key, val|
+data[:color].each do |key, val|
   val.each do |name|
     if !new_hash[name][:color].include?(key.to_s)
       new_hash[name][:color] << key.to_s
